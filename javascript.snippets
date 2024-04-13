@@ -1,0 +1,40 @@
+extends html
+
+snippet "react template" "React Functional Component Base" b
+import React from 'react';
+
+function ${1:COMPONENT_NAME}(${2:PROPS}) {
+  return (
+    <>
+      {/* JSX goes here */}
+    </>
+  );
+}
+   
+export default $1;
+endsnippet
+
+snippet "react template" "React Functional Component with useState and useEffect" b
+import React, { useState, useEffect } from 'react';
+
+function ${1:COMPONENT_NAME}(${2:PROPS}) {
+  // Example state
+  const [state, setState] = useState(${3:INITIAL_STATE});
+  
+  // Example effect
+  useEffect(() => {
+    // Side effect code here
+    return () => {
+      // Cleanup (if needed)
+    };
+  }, [${4:DEPENDENCIES}]);
+   
+  return (
+    <>
+      {/* JSX goes here */}
+    </>
+  );
+}
+   
+export default $1;
+endsnippet
