@@ -1,20 +1,38 @@
-snippet metadata
+snippet template "Default notes template" b
 ---
-title: <TITLE>
-author: Chandler Scott
-date: <DATE>
-lang: "en"
-...
+title: "$1"
+tags: [$2]
+summary: "$3"
+keywords: [$4]
+date: ${5:`date +"%Y-%m-%d %H:%M:%S %z"`}
+---
+
+## Overview
+
 endsnippet
 
-snippet itemize
-\begin{itemize}
-    \item
-\end{itemize}
+snippet metadata "Default Markdown Template" b
+---
+title: "$1"
+author: "Chandler Scott"
+date: ${3:`date +"%d/%m/%Y"`}
+lang: "en"
+---
+endsnippet
+
+snippet metadata "Class Outline Template" b
+---
+title: "$1"
+class: "$2"
+section "$3"
+date: ${4:`date +"%d/%m/%Y"`}
+topic: "$5"
+instructor: "Chandler Scott"
+---
 endsnippet
 
 # Jekyll
-snippet template "Jekyll Post Template" b
+snippet metadata "Jekyll Post Template" b
 ---
 layout: post
 title: "$1"
@@ -24,7 +42,13 @@ author: "Chandler Scott"
 ---
 endsnippet
 
-snippet codeblock "Code Block" b
+snippet itemize
+\begin{itemize}
+    \item
+\end{itemize}
+endsnippet
+
+snippet code "Code Block" b
 \`\`\`${1:language}
 ${0:Your code here...}
 \`\`\`
@@ -49,3 +73,18 @@ ${1:root}/
 ```
 endsnippet
 
+snippet h1 "header 1" b
+# $0
+endsnippet
+
+snippet h2 "header 2" b
+## $0
+endsnippet
+
+snippet h3 "header 3" b
+### $0
+endsnippet
+
+snippet h4 "header 4" b
+#### $0
+endsnippet
